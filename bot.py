@@ -1,4 +1,5 @@
 import random
+import glob, os
 
 import requests
 from bottle import (
@@ -20,15 +21,26 @@ answer_list = [2, 0, 2, 0, 1]
 class PreguntaAlternativa:
     question = ""
     correct_answer = 0
-    answers = []
+    options = []
     open_period = 20
 
-    def __init__(self, question, correct_answer, answers,open_period=20):
+    def __init__(self, question, correct_answer, answers, open_period=20):
         self.question = question
         self.correct_answer = correct_answer
-        self.answers = answers
+        self.options = answers
         self.open_period = open_period
 
+
+class PreguntaDesarrollo:
+    question = ""
+    correct_answer = ""
+
+    def __init__(self, question, correct_answer):
+        self.question = question
+        self.correct_answer = correct_answer
+
+
+db = {}
 
 preguntas_lvl1 = [PreguntaAlternativa("¿Cómo se definen las variables?", 2,
                                       ["nombre_variable: valor", "valor: nombre_variable",
@@ -43,25 +55,6 @@ preguntas_lvl1 = [PreguntaAlternativa("¿Cómo se definen las variables?", 2,
                                       ["Error", "'rrr'", "Invalid Operation", "'r'"])]
 
 
-def get_chat_id(data):
-    """
-    Method to extract chat id from telegram request.
-    """
-    chat_id = data['message']['chat']['id']
-
-    return chat_id
-
-
-def get_message(data):
-    """
-    Method to extract message id from telegram request.
-    """
-    print(data)
-    message_text = data['message']['text']
-
-    return message_text
-
-
 def send_message(prepared_data):
     """
     Prepared data should be json which includes at least `chat_id` and `text`
@@ -72,18 +65,20 @@ def send_message(prepared_data):
 
 def process_data(data):
     if "message" in data:
+        print(data)
+        db_values = check_chat_id(data['message']['chat']['id'])
+        if data["message"]["text"] == "/close" and data['message']['chat']['id']==-755520407:
+            save_db()
         if data["message"]["text"] == "/pregunta":
-            random_number = random.randint(0, len(questions_list) - 1)
-            question = questions_list[random_number]
-            options = options_list[random_number]
-            answer = answer_list[random_number]
+            random_number = random.randint(0, len(preguntas_lvl1) - 1)
+            question = preguntas_lvl1[random_number]
 
             json_data = {
-                "chat_id": get_chat_id(data),
-                "question": question,
-                "options": options,
+                "chat_id": data['message']['chat']['id'],
+                "question": question.question,
+                "options": question.options,
                 "type": "quiz",
-                "correct_option_id": answer,
+                "correct_option_id": question.correct_answer,
                 "open_period": 30
             }
 
@@ -92,6 +87,26 @@ def process_data(data):
         print(data)
         return
 
+
+def check_chat_id(chat_id):
+    if chat_id not in db:
+        db[chat_id] = [1, 0, 1]
+    return db[chat_id]
+
+def save_db():
+    for key in db:
+        chat_file = open("C:\\Users\\gus19\\Desktop\\P4G7\\database\\" + str(key) + ".txt", "w")
+        for value in db[key]:
+            chat_file.write(str(value) + "\n")
+        chat_file.close()
+
+def load_db():
+    os.chdir("C:\\Users\\gus19\\Desktop\\P4G7\\database")
+    for file in glob.glob("*.txt"):
+        chat_file = open("C:\\Users\\gus19\\Desktop\\P4G7\\database\\" + str(file), "r")
+        chat_values = [int(chat_file.readline()[:-1]), int(chat_file.readline()[:-1]), int(chat_file.readline()[:-1])]
+        db[file[:-4]] = chat_values
+    print(db)
 
 @post('/')
 def main():
@@ -102,4 +117,5 @@ def main():
 
 
 if __name__ == '__main__':
+    load_db()
     run(host='localhost', port=8080, debug=True)
