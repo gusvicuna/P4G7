@@ -18,7 +18,7 @@ options_list = [
 answer_list = [2, 0, 2, 0, 1]
 
 
-class PreguntaAlternativa:
+class MChoiceQuestion:
     question = ""
     correct_answer = 0
     options = []
@@ -31,7 +31,7 @@ class PreguntaAlternativa:
         self.open_period = open_period
 
 
-class PreguntaDesarrollo:
+class CodeQuestion:
     question = ""
     correct_answer = ""
 
@@ -42,16 +42,16 @@ class PreguntaDesarrollo:
 
 db = {}
 
-preguntas_lvl1 = [PreguntaAlternativa("¿Cómo se definen las variables?", 2,
+questions_lvl1 = [MChoiceQuestion("¿Cómo se definen las variables?", 2,
                                       ["nombre_variable: valor", "valor: nombre_variable",
                                        "nombre_variable= valor", "valor = nombre_variable"]),
-                  PreguntaAlternativa("¿Cual es el prefijo para crear una funcion?", 0,
+                  MChoiceQuestion("¿Cual es el prefijo para crear una funcion?", 0,
                                       ["if condicion:", "if(condicion){}", "if:", "if[condicion]"]),
-                  PreguntaAlternativa("¿Cual es el prefijo para crear una funcion?", 2,
+                  MChoiceQuestion("¿Cual es el prefijo para crear una funcion?", 2,
                                       ["void", "fun", "def", "function"]),
-                  PreguntaAlternativa("Cual es el resultado de print(list(range(1,5)))", 0,
+                  MChoiceQuestion("Cual es el resultado de print(list(range(1,5)))", 0,
                                       ["[1, 2, 3, 4]", "{1, 2, 3, 4,}", "{1, 2, 3, 4, 5}", "[1, 2, 3, 4, 5]"]),
-                  PreguntaAlternativa("Cual es el resultado de la operacion  'r' * 3 ", 1,
+                  MChoiceQuestion("Cual es el resultado de la operacion  'r' * 3", 1,
                                       ["Error", "'rrr'", "Invalid Operation", "'r'"])]
 
 
@@ -70,8 +70,8 @@ def process_data(data):
         if data["message"]["text"] == "/close" and data['message']['chat']['id']==-755520407:
             save_db()
         if data["message"]["text"] == "/pregunta":
-            random_number = random.randint(0, len(preguntas_lvl1) - 1)
-            question = preguntas_lvl1[random_number]
+            random_number = random.randint(0, len(questions_lvl1) - 1)
+            question = questions_lvl1[random_number]
 
             json_data = {
                 "chat_id": data['message']['chat']['id'],
@@ -107,6 +107,9 @@ def load_db():
         chat_values = [int(chat_file.readline()[:-1]), int(chat_file.readline()[:-1]), int(chat_file.readline()[:-1])]
         db[file[:-4]] = chat_values
     print(db)
+
+def load_questions():
+    for i in range()
 
 @post('/')
 def main():
