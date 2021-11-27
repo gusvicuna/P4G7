@@ -72,11 +72,9 @@ def process_data(data):
 
             json_data = {
                 "chat_id": data['message']['chat']['id'],
-                "question": question.question,
-                "options": question.options,
-                "type": "quiz",
-                "correct_option_id": question.correct_answer,
-                "open_period": 30
+                "text": "{0}\nA){1}\nB){2}\nC){3}\nD){4}".format(question.question, question.options[0], question.options[1], question.options[2], question.options[3]),
+                "reply_markup": {"keyboard": [[{"text": "A"}], [{"text": "B"}], [{"text": "C"}], [{"text": "D"}]], 
+                                 "one_time_keyboard": True}
             }
 
             send_message(json_data)  # <--- function for sending answer
