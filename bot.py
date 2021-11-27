@@ -21,17 +21,18 @@ answer_list = [2, 0, 2, 0, 1]
 
 
 class MChoiceQuestion:
-    number = ""
+    number = "000"
     question = ""
-    correct_answer = ""
+    correct_answer = "A"
     options = []
     open_period = 20
 
-    def __init__(self, question, correct_answer, answers, open_period=20):
+    def __init__(self, number, question, correct_answer, answers, open_period=20):
         self.question = question
         self.correct_answer = correct_answer
         self.options = answers
         self.open_period = open_period
+        self.number = number
 
 
 class CodeQuestion:
@@ -39,9 +40,10 @@ class CodeQuestion:
     question = ""
     correct_answer = ""
 
-    def __init__(self, question, correct_answer):
+    def __init__(self, number, question, correct_answer):
         self.question = question
         self.correct_answer = correct_answer
+        self.number = number
 
 
 db = {}
