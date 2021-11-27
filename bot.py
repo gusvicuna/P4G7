@@ -65,6 +65,13 @@ def process_data(data):
         print(data)
         db_values = check_chat_id(data['message']['chat']['id'])
 
+        if data["message"]["text"] == "/stats":
+            json_data = {
+                "chat_id": data['message']['chat']['id'],
+                "text": "Your stats are:\n Level: {0}\n Points: {1}".format(db_values[0],db_values[1])
+            }
+            send_message(json_data)
+
         if data["message"]["text"] == "/save" and data['message']['chat']['id'] == -755520407:
             save_db()
 
