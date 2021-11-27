@@ -1,0 +1,6 @@
+¿Cómo se definen las variables?
+2
+nombre_variable: valor
+valor: nombre_variable
+nombre_variable= valor
+valor = nombre_variable
