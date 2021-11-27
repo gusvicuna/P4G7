@@ -1,5 +1,7 @@
 import random
 import glob, os
+import json
+import sys
 
 import requests
 from bottle import (
@@ -64,10 +66,10 @@ def send_message(prepared_data):
 
 
 def process_data(data):
-    if "message" in data:
+    if "message" in data and "text" in data["message"]:
         print(data)
         db_values = check_chat_id(data['message']['chat']['id'])
-        if data["message"]["text"] == "/close" and data['message']['chat']['id']==-755520407:
+        if data["message"]["text"] == "/save" and data['message']['chat']['id']==-755520407:
             save_db()
         if data["message"]["text"] == "/pregunta":
             random_number = random.randint(0, len(questions_lvl1) - 1)
@@ -94,22 +96,14 @@ def check_chat_id(chat_id):
     return db[chat_id]
 
 def save_db():
-    for key in db:
-        chat_file = open("C:\\Users\\gus19\\Desktop\\P4G7\\database\\" + str(key) + ".txt", "w")
-        for value in db[key]:
-            chat_file.write(str(value) + "\n")
-        chat_file.close()
+    with open("C:\\Users\\gus19\\Desktop\\P4G7\\database.txt", "w") as jsonfile:
+        json.dump(db, jsonfile)
+
 
 def load_db():
-    os.chdir("C:\\Users\\gus19\\Desktop\\P4G7\\database")
-    for file in glob.glob("*.txt"):
-        chat_file = open("C:\\Users\\gus19\\Desktop\\P4G7\\database\\" + str(file), "r")
-        chat_values = [int(chat_file.readline()[:-1]), int(chat_file.readline()[:-1]), int(chat_file.readline()[:-1])]
-        db[file[:-4]] = chat_values
+    with open("C:\\Users\\gus19\\Desktop\\P4G7\\database.txt", "r") as file:
+        db = json.load(file)
     print(db)
-
-def load_questions():
-    for i in range()
 
 @post('/')
 def main():
