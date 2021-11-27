@@ -109,57 +109,57 @@ def load_questions():
     for j in range(1, 6):
         question_file = open("C:\\Users\\gus19\\Desktop\\P4G7\\questions\\{0}\\mChoice\\beginner\\{1}".format(1, j),
                              "r")
-        mChoice_questions[0][0].append(MChoiceQuestion(question_file.readline()[:-1], question_file.readline()[:-1],
+        mChoice_questions[0][0].append(MChoiceQuestion("00{0}".format(j), question_file.readline()[:-1], question_file.readline()[:-1],
                                                       [question_file.readline()[:-1], question_file.readline()[:-1],
                                                        question_file.readline()[:-1], question_file.readline()[:-1]]))
         question_file.close()
         question_file = open("C:\\Users\\gus19\\Desktop\\P4G7\\questions\\{0}\\mChoice\\intermediate\\{1}".format(1, j),
                              "r")
-        mChoice_questions[0][1].append(MChoiceQuestion(question_file.readline()[:-1], question_file.readline()[:-1],
+        mChoice_questions[0][1].append(MChoiceQuestion("01{0}".format(j), question_file.readline()[:-1], question_file.readline()[:-1],
                                                       [question_file.readline()[:-1], question_file.readline()[:-1],
                                                        question_file.readline()[:-1], question_file.readline()[:-1]]))
         question_file.close()
         question_file = open("C:\\Users\\gus19\\Desktop\\P4G7\\questions\\{0}\\mChoice\\advanced\\{1}".format(1, j),
                              "r")
-        mChoice_questions[0][2].append(MChoiceQuestion(question_file.readline()[:-1], question_file.readline()[:-1],
+        mChoice_questions[0][2].append(MChoiceQuestion("02{0}".format(j), question_file.readline()[:-1], question_file.readline()[:-1],
                                                       [question_file.readline()[:-1], question_file.readline()[:-1],
                                                        question_file.readline()[:-1], question_file.readline()[:-1]]))
         question_file.close()
     for j in range(1, 6):
         question_file = open("C:\\Users\\gus19\\Desktop\\P4G7\\questions\\{0}\\mChoice\\beginner\\{1}".format(2, j),
                              "r")
-        mChoice_questions[1][0].append(MChoiceQuestion(question_file.readline()[:-1], question_file.readline()[:-1],
+        mChoice_questions[1][0].append(MChoiceQuestion("10{0}".format(j), question_file.readline()[:-1], question_file.readline()[:-1],
                                                       [question_file.readline()[:-1], question_file.readline()[:-1],
                                                        question_file.readline()[:-1], question_file.readline()[:-1]]))
         question_file.close()
         question_file = open("C:\\Users\\gus19\\Desktop\\P4G7\\questions\\{0}\\mChoice\\intermediate\\{1}".format(2, j),
                              "r")
-        mChoice_questions[1][1].append(MChoiceQuestion(question_file.readline()[:-1], question_file.readline()[:-1],
+        mChoice_questions[1][1].append(MChoiceQuestion("11{0}".format(j), question_file.readline()[:-1], question_file.readline()[:-1],
                                                       [question_file.readline()[:-1], question_file.readline()[:-1],
                                                        question_file.readline()[:-1], question_file.readline()[:-1]]))
         question_file.close()
         question_file = open("C:\\Users\\gus19\\Desktop\\P4G7\\questions\\{0}\\mChoice\\advanced\\{1}".format(2, j),
                              "r")
-        mChoice_questions[1][2].append(MChoiceQuestion(question_file.readline()[:-1], question_file.readline()[:-1],
+        mChoice_questions[1][2].append(MChoiceQuestion("12{0}".format(j), question_file.readline()[:-1], question_file.readline()[:-1],
                                                       [question_file.readline()[:-1], question_file.readline()[:-1],
                                                        question_file.readline()[:-1], question_file.readline()[:-1]]))
         question_file.close()
     for j in range(1, 6):
         question_file = open("C:\\Users\\gus19\\Desktop\\P4G7\\questions\\{0}\\mChoice\\beginner\\{1}".format(3, j),
                              "r")
-        mChoice_questions[2][0].append(MChoiceQuestion(question_file.readline()[:-1], question_file.readline()[:-1],
+        mChoice_questions[2][0].append(MChoiceQuestion("20{0}".format(j), question_file.readline()[:-1], question_file.readline()[:-1],
                                                       [question_file.readline()[:-1], question_file.readline()[:-1],
                                                        question_file.readline()[:-1], question_file.readline()[:-1]]))
         question_file.close()
         question_file = open("C:\\Users\\gus19\\Desktop\\P4G7\\questions\\{0}\\mChoice\\intermediate\\{1}".format(3, j),
                              "r")
-        mChoice_questions[2][1].append(MChoiceQuestion(question_file.readline()[:-1], question_file.readline()[:-1],
+        mChoice_questions[2][1].append(MChoiceQuestion("21{0}".format(j), question_file.readline()[:-1], question_file.readline()[:-1],
                                                       [question_file.readline()[:-1], question_file.readline()[:-1],
                                                        question_file.readline()[:-1], question_file.readline()[:-1]]))
         question_file.close()
         question_file = open("C:\\Users\\gus19\\Desktop\\P4G7\\questions\\{0}\\mChoice\\advanced\\{1}".format(3, j),
                              "r")
-        mChoice_questions[2][2].append(MChoiceQuestion(question_file.readline()[:-1], question_file.readline()[:-1],
+        mChoice_questions[2][2].append(MChoiceQuestion("22{0}".format(j), question_file.readline()[:-1], question_file.readline()[:-1],
                                                       [question_file.readline()[:-1], question_file.readline()[:-1],
                                                        question_file.readline()[:-1], question_file.readline()[:-1]]))
         question_file.close()
