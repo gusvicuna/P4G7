@@ -44,17 +44,12 @@ class CodeQuestion:
 
 db = {}
 
-questions_lvl1 = [MChoiceQuestion("¿Cómo se definen las variables?", 2,
-                                      ["nombre_variable: valor", "valor: nombre_variable",
-                                       "nombre_variable= valor", "valor = nombre_variable"]),
-                  MChoiceQuestion("¿Cual es el prefijo para crear una funcion?", 0,
-                                      ["if condicion:", "if(condicion){}", "if:", "if[condicion]"]),
-                  MChoiceQuestion("¿Cual es el prefijo para crear una funcion?", 2,
-                                      ["void", "fun", "def", "function"]),
-                  MChoiceQuestion("Cual es el resultado de print(list(range(1,5)))", 0,
-                                      ["[1, 2, 3, 4]", "{1, 2, 3, 4,}", "{1, 2, 3, 4, 5}", "[1, 2, 3, 4, 5]"]),
-                  MChoiceQuestion("Cual es el resultado de la operacion  'r' * 3", 1,
-                                      ["Error", "'rrr'", "Invalid Operation", "'r'"])]
+mChoice_questions_lvl1 = [[], [] ,[]]
+mChoice_questions_lvl2 = [[], [] ,[]]
+mChoice_questions_lvl3 = [[] ,[], []]
+code_questions_lvl1 = [[], [], []]
+code_questions_lvl2 = [[], [], []]
+code_questions_lvl3 = [[], [], []]
 
 
 def send_message(prepared_data):
@@ -72,8 +67,8 @@ def process_data(data):
         if data["message"]["text"] == "/save" and data['message']['chat']['id']==-755520407:
             save_db()
         if data["message"]["text"] == "/pregunta":
-            random_number = random.randint(0, len(questions_lvl1) - 1)
-            question = questions_lvl1[random_number]
+            random_number = random.randint(0, len(mChoice_questions_lvl1[0]) - 1)
+            question = mChoice_questions_lvl1[0][random_number]
 
             json_data = {
                 "chat_id": data['message']['chat']['id'],
@@ -105,6 +100,29 @@ def load_db():
         db = json.load(file)
     print(db)
 
+def load_questions():
+    for j in range(1, 6):
+        question_file = open("C:\\Users\\gus19\\Desktop\\P4G7\\questions\\{0}\\mChoice\\beginner\\{1}".format(1, j))
+        code_questions_lvl1[0].append(MChoiceQuestion(question_file.readline()[:-1], int(question_file.readline()[:-1]), [question_file.readline()[:-1], question_file.readline()[:-1], question_file.readline()[:-1], question_file.readline()[:-1]]))
+        question_file = open("C:\\Users\\gus19\\Desktop\\P4G7\\questions\\{0}\\mChoice\\intermediate\\{1}".format(1, j))
+        code_questions_lvl1[1].append(MChoiceQuestion(question_file.readline()[:-1], int(question_file.readline()[:-1]), [question_file.readline()[:-1], question_file.readline()[:-1], question_file.readline()[:-1], question_file.readline()[:-1]]))
+        question_file = open("C:\\Users\\gus19\\Desktop\\P4G7\\questions\\{0}\\mChoice\\advanced\\{1}".format(1, j))
+        code_questions_lvl1[2].append(MChoiceQuestion(question_file.readline()[:-1], int(question_file.readline()[:-1]), [question_file.readline()[:-1], question_file.readline()[:-1], question_file.readline()[:-1], question_file.readline()[:-1]]))
+    for j in range(1, 6):
+        question_file = open("C:\\Users\\gus19\\Desktop\\P4G7\\questions\\{0}\\mChoice\\beginner\\{1}".format(2, j))
+        code_questions_lvl2[0].append(MChoiceQuestion(question_file.readline()[:-1], int(question_file.readline()[:-1]), [question_file.readline()[:-1], question_file.readline()[:-1], question_file.readline()[:-1], question_file.readline()[:-1]]))
+        question_file = open("C:\\Users\\gus19\\Desktop\\P4G7\\questions\\{0}\\mChoice\\intermediate\\{1}".format(2, j))
+        code_questions_lvl2[1].append(MChoiceQuestion(question_file.readline()[:-1], int(question_file.readline()[:-1]), [question_file.readline()[:-1], question_file.readline()[:-1], question_file.readline()[:-1], question_file.readline()[:-1]]))
+        question_file = open("C:\\Users\\gus19\\Desktop\\P4G7\\questions\\{0}\\mChoice\\advanced\\{1}".format(2, j))
+        code_questions_lvl2[2].append(MChoiceQuestion(question_file.readline()[:-1], int(question_file.readline()[:-1]), [question_file.readline()[:-1], question_file.readline()[:-1], question_file.readline()[:-1], question_file.readline()[:-1]]))
+    for j in range(1, 6):
+        question_file = open("C:\\Users\\gus19\\Desktop\\P4G7\\questions\\{0}\\mChoice\\beginner\\{1}".format(3, j))
+        code_questions_lvl3[0].append(MChoiceQuestion(question_file.readline()[:-1], int(question_file.readline()[:-1]), [question_file.readline()[:-1], question_file.readline()[:-1], question_file.readline()[:-1], question_file.readline()[:-1]]))
+        question_file = open("C:\\Users\\gus19\\Desktop\\P4G7\\questions\\{0}\\mChoice\\intermediate\\{1}".format(3, j))
+        code_questions_lvl3[1].append(MChoiceQuestion(question_file.readline()[:-1], int(question_file.readline()[:-1]), [question_file.readline()[:-1], question_file.readline()[:-1], question_file.readline()[:-1], question_file.readline()[:-1]]))
+        question_file = open("C:\\Users\\gus19\\Desktop\\P4G7\\questions\\{0}\\mChoice\\advanced\\{1}".format(3, j))
+        code_questions_lvl3[2].append(MChoiceQuestion(question_file.readline()[:-1], int(question_file.readline()[:-1]), [question_file.readline()[:-1], question_file.readline()[:-1], question_file.readline()[:-1], question_file.readline()[:-1]]))
+
 @post('/')
 def main():
     data = bottle_request.json
@@ -115,4 +133,5 @@ def main():
 
 if __name__ == '__main__':
     load_db()
+    load_questions()
     run(host='localhost', port=8080, debug=True)
