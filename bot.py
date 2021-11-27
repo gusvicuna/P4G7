@@ -36,7 +36,7 @@ class MChoiceQuestion:
 
 
 class CodeQuestion:
-    number = ""
+    number = "000"
     question = ""
     correct_answer = ""
 
