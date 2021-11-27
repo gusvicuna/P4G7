@@ -76,8 +76,17 @@ def process_data(data):
             save_db()
 
         if data["message"]["text"] == "/pregunta":
-            random_number = random.randint(0, len(mChoice_questions[0][0]) - 1)
-            question = mChoice_questions[0][0][random_number]
+            user = db[data['message']['chat']['id']]
+
+            if user[1] < 25:
+                random_number = random.randint(0, len(mChoice_questions[user[0]][0]) - 1)
+                question = mChoice_questions[user[0]][0][random_number]
+            elif db[data['message']['chat']['id']][1] < 50:
+                random_number = random.randint(0, len(mChoice_questions[user[0]][1]) - 1)
+                question = mChoice_questions[user[0]][1][random_number]
+            else:
+                random_number = random.randint(0, len(mChoice_questions[user[0]][2]) - 1)
+                question = mChoice_questions[user[0]][2][random_number]
 
             json_data = {
                 "chat_id": data['message']['chat']['id'],
