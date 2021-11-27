@@ -21,6 +21,7 @@ answer_list = [2, 0, 2, 0, 1]
 
 
 class MChoiceQuestion:
+    number = ""
     question = ""
     correct_answer = ""
     options = []
@@ -34,6 +35,7 @@ class MChoiceQuestion:
 
 
 class CodeQuestion:
+    number = ""
     question = ""
     correct_answer = ""
 
@@ -74,7 +76,7 @@ def process_data(data):
 
             json_data = {
                 "chat_id": data['message']['chat']['id'],
-                "text": "{0}\nA){1}\nB){2}\nC){3}\nD){4}".format(question.question, question.options[0], question.options[1], question.options[2], question.options[3]),
+                "text": "{0}:{1}\nA){2}\nB){3}\nC){4}\nD){5}".format(question.number, question.question, question.options[0], question.options[1], question.options[2], question.options[3]),
                 "reply_markup": {"keyboard": [[{"text": "A"}], [{"text": "B"}], [{"text": "C"}], [{"text": "D"}]], 
                                  "one_time_keyboard": True}
             }
@@ -82,7 +84,7 @@ def process_data(data):
             send_message(json_data)  # <--- function for sending answer
 
         if "reply_to_message" in data["message"]:
-            print(data["message"]["text"])
+            print(data["message"]["text"], data["message"]["reply_to_message"]["text"][:2])
     elif "poll" in data:
         print(data)
         return
