@@ -1,6 +1,6 @@
-�Cual es el prefijo para crear una funcion?
+Cual es el prefijo para crear una condicion?
 A
-if condicion:
-if(condicion){}
-if:
-if[condicion]
+<code>if condicion:</code>
+<code>if(condicion){}</code>
+<code>if:</code>
+<code>if\[condicion]</code>

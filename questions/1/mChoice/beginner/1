@@ -1,6 +1,6 @@
-�C�mo se definen las variables?
+Como se definen las variables?
 C
-nombre_variable: valor
-valor: nombre_variable
-nombre_variable= valor
-valor = nombre_variable
+<code>nombre_variable: valor</code>
+<code>valor: nombre_variable</code>
+<code>nombre_variable = valor</code>
+<code>valor = nombre_variable</code>

@@ -1,6 +1,6 @@
-Cual es el resultado de la operacion  'r' * 3
+Cual es el resultado de la operacion  <code>'r' * 3</code>
 B
-Error
-'rrr'
-Invalid Operation
-'r'
+<code>Error</code>
+<code>'rrr'</code>
+<code>Invalid Operation</code>
+<code>'r'</code>
