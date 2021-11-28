@@ -8,7 +8,7 @@ from bottle import (
     run, post, response, request as bottle_request
 )
 
-BOT_URL = 'https://api.telegram.org/bot2105695159:AAGP21o80wOJeBFXHDGTX7n7aJxAAEm3jwg/'  # <--- add your telegram token here; it should be like https://api.telegram.org/bot12345678:SOMErAn2dom/
+BOT_URL = 'https://api.telegram.org/bot2105695159:AAGP21o80wOJeBFXHDGTX7n7aJxAAEm3jwg/' 
 
 class MChoiceQuestion:
     number = "000"
@@ -175,7 +175,8 @@ def process_data(data):
 
 def check_chat_id(chat_id):
     if chat_id not in db:
-        db[chat_id] = [1, 0, 1, "000", False, False] #Nivel, Puntaje, Pregunta, Esta respondiendo
+        db[chat_id] = [1, 0, 1, "000", False, False] 
+                      #Nivel, Puntaje, Pregunta Desarollo, Codigo Pregunta, Esta respondiendo, Alternativa/Codigo
     return db[chat_id]
 
 
@@ -233,8 +234,7 @@ def main():
     data = bottle_request.json
     process_data(data)
 
-    return response  # status 200 OK by default
-
+    return response
 
 if __name__ == '__main__':
     print(exec("variable = 5"))
