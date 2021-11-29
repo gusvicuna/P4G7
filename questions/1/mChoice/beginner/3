@@ -1,6 +1,6 @@
-Cual es el prefijo para crear una funcion?
+¿Cuántas variables hay en el siguiente código?\n x = 1\n y = 2\n x = y
 C
-<code>void</code>
-<code>fun</code>
-<code>def</code>
-<code>function</code>
+<code>0</code>
+<code>1</code>
+<code>2</code>
+<code>4</code>

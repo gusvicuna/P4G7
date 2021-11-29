@@ -1,6 +1,6 @@
-Cual es el prefijo para crear una condicion?
+¿Cuál es el valor de la variable x luego de ejecutar el siguiente código?\n x = 0\n x = 1
 A
-<code>if condicion:</code>
-<code>if(condicion){}</code>
-<code>if:</code>
-<code>if\[condicion]</code>
+<code>1</code>
+<code>0</code>
+<code>x</code>
+<code>null</code>

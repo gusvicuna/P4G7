@@ -1,6 +1,6 @@
-Cual es el resultado de la operacion  <code>'r' * 3</code>
+¿Cuál es el valor de la variable x luego del siguiente código?\n x = 1\n #x = 3\n x = -1
 B
-<code>Error</code>
-<code>'rrr'</code>
-<code>Invalid Operation</code>
-<code>'r'</code>
+<code>1</code>
+<code>-1</code>
+<code>3</code>
+<code>-3</code>

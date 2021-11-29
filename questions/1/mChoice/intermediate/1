@@ -1,6 +1,6 @@
-�C�mo se definen las variables?
-A
-nombre_variable: valor
-valor: nombre_variable
-nombre_variable= valor
-valor = nombre_variable
+¿Que se imprime en la consola al ejecutar el siguiente codigo?\n x = y\n y = "Hola mundo"\n print(x)
+D
+x = "Hola mundo"
+"Hola mundo"
+Hola mundo
+Error

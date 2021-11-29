@@ -1,4 +1,4 @@
-Como se definen las variables?
+¿Como se define una variable?
 C
 <code>nombre_variable: valor</code>
 <code>valor: nombre_variable</code>

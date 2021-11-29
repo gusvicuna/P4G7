@@ -1,6 +1,6 @@
-Que entrega <code>list(range(1,5))</code>
+¿Qué sucede si se agrega un comentario al final de una linea de código?
 A
-<code>[1, 2, 3, 4]</code>
-<code>{1, 2, 3, 4,}</code>
-<code>{1, 2, 3, 4, 5}</code>
-<code>[1, 2, 3, 4, 5]</code>
+<code>Nada, el comentario es agregado correctamente</code>
+<code>El código no correrá</code>
+<code>La linea de código se transformará en un comentario</code>
+<code>El comentario se tomará como código</code>
