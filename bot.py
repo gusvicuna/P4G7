@@ -60,22 +60,33 @@ def process_data(data):
                 "text": "Your stats are:\n Level: {0}\n Points: {1}".format(db_values[0],db_values[1])
             }
             send_message(json_data)
-
+        
+        elif data["message"]["text"] == "/help":
+            help_text = "In this bot you'll try to get complete all the levels gaining points for each on of them while you answer questions about coding on python.\n\nThere are currently 3 levels with different subjects:\n  Level 1 : Comments and Variables\n  Level 2 : Data types and Operators\n  Level 3: Lists, Tuples, Sets and Dictionaries\n\nEach time you get to 25 and 50 points on each level the difficulty will increase! And when you get to 100 points you will be tested with 3 questions where you have to write code. If you answer them all correctly you pass to the next level! if you don't, then you will lose points and try again later.\n\nCommands:\n  /question: get a new question\n  /stats: see your current stats\n  /help: I will send you this message again\n\nGood luck!"
+            json_data = {
+                "chat_id": data['message']['chat']['id'],
+                "text": help_text
+            }
+            send_message(json_data)
+            json_data = {
+                "chat_id": data['message']['chat']['id'],
+                "text": "Your stats are:\n Level: {0}\n Points: {1}".format(db_values[0],db_values[1])
+            }
+            send_message(json_data)
         elif data["message"]["text"] == "/save" and data['message']['chat']['id'] == -755520407:
             save_db()
 
-        elif data["message"]["text"] == "/pregunta":
+        elif data["message"]["text"] == "/question":
             user = db[data['message']['chat']['id']]
             alternativa = True
 
-
-            if user[1] < 25:
+            if user[1] <= 25:
                 random_number = random.randint(0, len(mChoice_questions[user[0]-1][0]) - 1)
                 question = mChoice_questions[user[0]-1][0][random_number]
-            elif db[data['message']['chat']['id']][1] < 50:
+            elif db[data['message']['chat']['id']][1] <= 50:
                 random_number = random.randint(0, len(mChoice_questions[user[0]-1][1]) - 1)
                 question = mChoice_questions[user[0]-1][1][random_number]
-            elif user[1] < 100:
+            elif user[1] <= 100:
                 random_number = random.randint(0, len(mChoice_questions[user[0]-1][2]) - 1)
                 question = mChoice_questions[user[0]-1][2][random_number]
             elif user[2] == 1:
@@ -128,7 +139,7 @@ def process_data(data):
                     db_values[1] = 0
                 json_data = {
                     "chat_id": data['message']['chat']['id'],
-                    "text": "Correcto!"
+                    "text": "Correct!"
                 }
             else:
                 if db_values[2] == 1:
@@ -140,7 +151,7 @@ def process_data(data):
                 db_values[2] = 1
                 json_data = {
                     "chat_id": data['message']['chat']['id'],
-                    "text": "Incorrecto"
+                    "text": "Incorrect"
                 }
             send_message(json_data)
             save_db()
@@ -150,12 +161,12 @@ def process_data(data):
             question_number = db_values[3]
             question = mChoice_questions[int(question_number[0])][int(question_number[1])][int(question_number[2])-1]
             if question.correct_answer == data["message"]["text"]:
-                db[data['message']['chat']['id']][1] += 5
+                db[data['message']['chat']['id']][1] += 10
                 if db[data['message']['chat']['id']][1] > 100:
                     db[data['message']['chat']['id']][1] = 100
                 json_data = {
                     "chat_id": data['message']['chat']['id'],
-                    "text": "Correcto!"
+                    "text": "Correct!"
                 }
             else:
                 db[data['message']['chat']['id']][1] -= 5
@@ -163,15 +174,15 @@ def process_data(data):
                     db[data['message']['chat']['id']][1] = 0
                 json_data = {
                     "chat_id": data['message']['chat']['id'],
-                    "text": "Incorrecto"
+                    "text": "Incorrect"
                 }
             send_message(json_data)
+            json_data = {
+                "chat_id": data['message']['chat']['id'],
+                "text": "Your stats are:\n Level: {0}\n Points: {1}".format(db_values[0],db_values[1])
+            }
+            send_message(json_data)
             save_db()
-
-    elif "poll" in data:
-        print(data)
-        return
-
 
 def check_chat_id(chat_id):
     if chat_id not in db:
