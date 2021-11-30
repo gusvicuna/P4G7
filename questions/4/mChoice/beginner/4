@@ -1,6 +1,6 @@
-¿Que imprime la consola al ejecutar el siguiente codigo?\nx = "my string"\nfor a in x:\n    x = x + ' ' + a\nfor b in x:\n    x[b] = "a"\nprint (x)
-A
-'str' object does not support item assignment
-my string m y   s t r i n g
-'str' object is not callable
-'str' object is not iterable
+Replace '#' in the if statement with the option that triggers the 'else' statement\\a = 1\\if a # 1:\\    print("I do not want to be here")\\else:\\    print("Welcome to the 'else' statement")
+C
+>=
+is
+is not
+<=
