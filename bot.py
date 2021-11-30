@@ -318,7 +318,7 @@ def load_questions():
             question_file.close()
 
     for i in range(1, 6):
-        for j in range(1, 4):
+        for j in range(1, 3):
             question_file = open(os.path.join(current_directory, "questions", str(i), "code", "beginner", str(j)), "r")
             code_questions[i-1][0].append(
                 CodeQuestion("{1}0{0}".format(j, i-1), refactor_question(question_file.readline()[:-1]), question_file.readline()[:-1],question_file.readline()[:-1], question_file.readline()))

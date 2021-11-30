@@ -1,4 +1,4 @@
-Define una variable <code>variable</code> que tenga el valor <code>5</code>
-a
-Hint
-x = 0
+Define una variable <code>x</code> que tenga el tipo de la variable <code>a</code> como string
+<class 'int'>
+Para saber el tipo de una variable tienes que usar type(variable)
+global a; a = 5

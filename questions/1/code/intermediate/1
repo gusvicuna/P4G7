@@ -1,4 +1,4 @@
-Define una variable <code>variable</code> que tenga el valor <code>5</code>
-a
-Hint
+Define una variable <code>x</code> que tenga un string del numero 5
+5
+Los strings van entre comillas ""
 x = 0

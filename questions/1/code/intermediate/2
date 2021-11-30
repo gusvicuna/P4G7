@@ -1,4 +1,4 @@
-Define una variable <code>variable</code> que tenga el valor <code>5</code>
-a
-Hint
-x = 0
+Crea una variable x y asignale el valor de la variable z más el valor de la variable y
+3
+Puedes usar el operador +
+global y; global z; y = 1; z = 2;

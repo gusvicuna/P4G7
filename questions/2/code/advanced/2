@@ -1,4 +1,4 @@
-Define una variable <code>variable</code> que tenga el valor <code>5</code>
-a
-Hint
-x = 0
+Da vuelta el string contenido en a. Luego obten desde el segundo caracter hasta el penultimo caracter del resultado. Guarda el resultado final en la variable x.
+8765432
+Usa variable[n:m] para definir el inicio y final de un string. Usa variable[::-1] para dar vuelta un string.
+global a; a = '123456789'

@@ -1,2 +1,4 @@
-Define una variable <code>variable</code> que tenga el valor <code>5</code>
-a
+Suma a y b, luego dividelo por c, quedandote solo con la parte entera. Guarda el resultado en la variable x.
+2
+Para dividir en partes enteras se usa el operador //. No te olvides de los parentesis.
+global a; global b; global c; a = 6; b = 7; c = 5
