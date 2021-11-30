@@ -1,6 +1,7 @@
-�C�mo se definen las variables?
-A
-nombre_variable: valor
-valor: nombre_variable
-nombre_variable= valor
-valor = nombre_variable
+What's thhe difference between <code>for i in dictionary</code> and <for i in dictionary.keys</code>?
+B
+The first one iterates the values and the second one the keys
+They are the same
+The first one isn't valid and the second one iterates the keys
+The first one iterate the keys and the second one isn't valid
+Every object in Python has attributes, this are accessed <code>object.attribute</code> 
