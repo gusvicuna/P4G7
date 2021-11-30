@@ -1,5 +1,8 @@
-a = True
-b = False
-c = not (a and b) or not a
-d = 3
-print( not(d < 3) and c )
+x = 0
+
+def process_code_answer(answer):
+    exec("global x; " + answer)
+    return x
+
+test_answer = "x = 2"
+print(process_code_answer(test_answer))

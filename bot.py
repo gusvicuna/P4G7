@@ -43,6 +43,7 @@ class CodeQuestion:
 current_directory = os.path.dirname(__file__)
 
 db = {}
+x = 0
 
 mChoice_questions = [[[], [], []], [[], [], []], [[], [], []],[[], [], []],[[], [], []]]
 code_questions = [[[], [], []], [[], [], []], [[], [], []],[[], [], []],[[], [], []]]
@@ -55,6 +56,7 @@ def send_message(prepared_data):
 
 def process_data(data):
     global db
+    global x
 
     print(data)
     print()
@@ -181,12 +183,11 @@ def process_data(data):
             question_number = user[3]
             question = code_questions[int(question_number[0])][int(question_number[1])][int(question_number[2])-1]
             try:
-                x = process_code_answer(data["message"]["text"])
-                print(x)
+                exec("global x; " + data["message"]["text"])
+                print(x,question.correct_answer)
             except ValueError as err:
                 print(err)
-                x = 0
-            if question.correct_answer == x: #ESTO HAY QUE CAMBIAR
+            if question.correct_answer == str(x): #ESTO HAY QUE CAMBIAR
                 user[7][int(question_number[1])].append(question.number)
                 user[2] += 1
                 json_data = {
@@ -261,11 +262,6 @@ def process_data(data):
             send_message(json_data)
             save_db()
 
-def process_code_answer(answer):
-    x = 0
-    exec("global x; " + answer)
-    return x
-
 def check_chat_id(chat_id):
     global db
     if str(chat_id) not in db:
@@ -279,7 +275,6 @@ def refactor_question(question):
     for linea in lineas:
         question_final+=linea
         question_final+="\n"
-    print(question_final)
     return question_final
 
 def save_db():
