@@ -1,6 +1,6 @@
-�Cual es el prefijo para crear una funcion?
-A
-void
-fun
-def
-function
+a = 1\n#Cambiemos el valor a por 5\nA = 5\n'''Creamos una variable nueva b'''\nb = a\n#Veamos el resultado de A + b\nprint(a + b)
+D
+1
+6
+7
+2

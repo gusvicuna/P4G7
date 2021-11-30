@@ -1,6 +1,6 @@
-�C�mo se definen las variables?
-A
-nombre_variable: valor
-valor: nombre_variable
-nombre_variable= valor
-valor = nombre_variable
+a = 4\n'''A = 'John' '''\nA = 'Doe'\nA = str(a) + A\nprint(a)
+D
+John Doe
+4Doe
+Doe4
+4

@@ -1,6 +1,6 @@
-�Cual es el prefijo para crear una funcion?
+Cual de las siguientes opciones es en formato Camel Case?
 A
-if condicion:
-if(condicion){}
-if:
-if[condicion]
+miNuevaVariable
+mi_Nueva_Variable
+MiNuevaVariable
+MinuevaVariabl
