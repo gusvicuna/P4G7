@@ -1,6 +1,6 @@
-¿Que imprime la consola al ejecutar el siguiente codigo?\nx = "my string"\nfor a in x:\n    x = x + ' ' + a\nfor b in x:\n    x[b] = "a"\nprint (x)
+a = 1\nb = 5\nif a > b:\n    a = 2\n    b = 9\n    a = a + 1\n    print(b * a * a)\nelse:\n    b = 3\n    print(a + b)
 A
-'str' object does not support item assignment
-my string m y   s t r i n g
-'str' object is not callable
-'str' object is not iterable
+4
+729
+6
+Error
