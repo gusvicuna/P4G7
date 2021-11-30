@@ -1,4 +1,4 @@
-Define una variable <code>variable</code> que tenga el valor <code>5</code>
-a
-Hint
-x = 0
+Obten el resultado de si a es mayor que 0 o b no es menor igual que 0. Guarda el resultado en la variable x.
+False
+Puedes usar <, <=, >= y > para comparar entre valores numericos. and, or y not tambien sirven para comparar booleanos.
+global a; global b; a = 0; b = 0;

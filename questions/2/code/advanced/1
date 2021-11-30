@@ -1,4 +1,4 @@
-Define una variable <code>variable</code> que tenga el valor <code>5</code>
-a
-Hint
-x = 0
+Obten el modulo de la division de a y b y luego dividelo exactamente por c, sabiendo que c es un int. Guarda el resultado en la variable x.
+1.5
+Puedes usar % para obtener el modulo de una division. Recuerda que los tipos float pueden efectuar divisiones exactas.
+global a; global b; global c; a = 13; b = 5; c = 2

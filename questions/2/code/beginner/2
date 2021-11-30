@@ -1,4 +1,4 @@
-Define una variable <code>variable</code> que tenga el valor <code>5</code>
-a
-Hint
-x = 0
+Obten el resultado de la suma de los numeros de las variables a y b, sabiendo que ambas variables tienen un numero como string. Guarda el resultado en la variable x.
+13
+Puedes transformar un string a int usando int(variable)
+global a; global b; a = '6'; b = '7'

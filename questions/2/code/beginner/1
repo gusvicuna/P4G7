@@ -1,4 +1,4 @@
-Define una variable <code>variable</code> que tenga el valor <code>5</code>
-a
-Hint
-x = 0
+Compara los valores de las variables a y b. Guarda el resultado en la variable x
+False
+Para comparar valores se utiliza ==
+global a; global b; a = '2'; b = 2

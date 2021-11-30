@@ -1,4 +1,4 @@
-Define una variable <code>variable</code> que tenga el valor <code>5</code>
-a
-Hint
-x = 0
+Haz que las variables x, a y b tengan un valor de 5 en una sola linea.
+5
+Puedes usar el signo = multiples veces en una sola linea
+global a; global b;

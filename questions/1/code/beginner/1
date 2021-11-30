@@ -1,4 +1,4 @@
 Define una variable <code>x</code> que tenga el valor de la variable <code>a</code>
 5
-Hint
+Puede que necesites usar el signo =
 global a; a = 5
