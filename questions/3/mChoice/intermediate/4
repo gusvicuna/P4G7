@@ -1,6 +1,7 @@
-Cual es el resultado de print(list(range(1,5)))
-A
-[1, 2, 3, 4]
-{1, 2, 3, 4,}
-{1, 2, 3, 4, 5}
-[1, 2, 3, 4, 5]
+What's the result of <code>list(range(1,5))</code>?
+B
+<code>[1, 2, 3, 4]</code>
+<code>{1, 2, 3, 4,}</code>
+<code>{1, 2, 3, 4, 5}</code>
+<code>[1, 2, 3, 4, 5]</code>
+<code>range(a, b)</code> only returns values until <code>b - 1</code>

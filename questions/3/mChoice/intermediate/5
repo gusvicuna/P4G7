@@ -1,6 +1,7 @@
-Cual es el resultado de la operacion  'r' * 3
-A
-Error
-'rrr'
-Invalid Operation
-'r'
+If we have <code>dictionary = {"A": 1, "B": 2}</code> and realize the operation dictionary.popitem() what's dictionary value?
+C
+<code>{"A": 1, "B": 2}</code>
+<code>{"B": 2}</code>
+<code>{"A": 1}</code>
+<code>{}</code>
+popitem() returns a key value pair

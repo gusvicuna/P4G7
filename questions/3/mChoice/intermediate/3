@@ -1,6 +1,7 @@
-�Cual es el prefijo para crear una funcion?
-A
-void
-fun
-def
-function
+How do you access the values of a <code>tuple</code>?
+D
+<code>tuple{index}</code>
+<code>tuple[key]</code>
+<code>tuple{key}</code>
+<code>tuple[index]</code>
+Tuples only store values in a fixed order

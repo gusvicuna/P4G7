@@ -1,7 +1,7 @@
 What is the result of the operation <code>[1, 2, 3] + [4, 5, 6]</code>?
 D
-[1, 2, 3]
-[4, 5, 6]
-TypeError: unsupported operand type(s) for +: 'list' and 'list'
-[1, 2, 3, 4, 5, 6]
+<code>[1, 2, 3]</code>
+<code>[4, 5, 6]</code>
+<code>TypeError: unsupported operand type(s) for +: 'list' and 'list'</code>
+<code>[1, 2, 3, 4, 5, 6]</code>
 This operation is supported for tuples

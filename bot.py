@@ -161,7 +161,6 @@ def process_data(data):
                     "parse_mode": "HTML"
                 }
 
-            print("Antes mensaje")
             send_message(json_data)
 
         elif data["message"]["text"] == "/hint" and user[4] is True:
