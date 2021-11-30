@@ -1,4 +1,4 @@
-Define una variable <code>variable</code> que tenga el valor <code>5</code>
-a
-Hint
-x = 0
+Define una variable <code>x</code> que sea una lista con las variables a, b y c
+[1,2,3]
+Usa [] para definir una lista.
+global a; global b; global c; a = 1; b = 2; c = 3

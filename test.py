@@ -6,16 +6,17 @@ d = 0
 y = 0
 z = 0
 
-correct_answer = "8765432"
-pre_exec = "global a; a = '123456789'"
+correct_answer = "{'que': 2, 'tal': 3, 'colour': 1}"
+pre_exec = "global x; x = {'color': 1,'que': 2,'tal': 3}"
 
-test_answer = "x = a[::-1][1:-1]"
+test_answer = "a = x['color']; x.pop('color'); x['colour']=a"
 
 def process_code_answer(answer):
     exec("global x; " + answer)
+    print(x)
     return x
 
 
 exec(pre_exec)
-print(str(process_code_answer(test_answer)), correct_answer)
+print(correct_answer)
 print(str(process_code_answer(test_answer)) == correct_answer)

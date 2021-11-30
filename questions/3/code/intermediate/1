@@ -1,4 +1,4 @@
-Define una variable <code>variable</code> que tenga el valor <code>5</code>
-a
-Hint
-x = 0
+Siendo a una lista, guarda en x la suma de sus 3 primeros valores
+6
+Usa [i] para acceder a un valor de una lista.
+global a; a = [1,2,3]

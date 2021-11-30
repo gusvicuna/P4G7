@@ -1,4 +1,4 @@
-Define una variable <code>variable</code> que tenga el valor <code>5</code>
-a
-Hint
-x = 0
+Siendo a un diccionario, guarda en x la lista de sus valores. Agrega a esa lista una sublista con las llaves de a.
+[1, 2, 3, ['Hola', 'que', 'tal']]
+Usa keys() para obtener las llavers de un diccionario. Usa values para obtener los valores de un diccionario.
+global a; a = {"Hola":1,"que":2,"tal":3}

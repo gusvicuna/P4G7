@@ -1,4 +1,4 @@
-Define una variable <code>variable</code> que tenga el valor <code>5</code>
-a
-Hint
-x = 0
+Agrega el valor/llave "color" : "rojo" al diccionario x
+{"color": "rojo"}
+Usa ["key"] para crear una llave en una lista.
+global x; x = {}

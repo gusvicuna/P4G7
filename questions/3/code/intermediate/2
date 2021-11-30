@@ -1,4 +1,4 @@
-Define una variable <code>variable</code> que tenga el valor <code>5</code>
-a
-Hint
-x = 0
+Elimina "color" del diccionario x, luego agrega "colour" al diccionario con el mismo valor que tenía "color"
+{'que': 2, 'tal': 3, 'colour': 1}
+Recuerda que puedes usar variables para guardar datos.
+global a; a = {"color":1,"que":2,"tal":3}
