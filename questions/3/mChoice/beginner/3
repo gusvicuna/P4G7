@@ -1,6 +1,6 @@
-�Cual es el prefijo para crear una funcion?
+Cual es el resultado de\\myDict = {1:"Value for key 1","two":"Value for key two"}\\myDict["3"] = "Value for key 3"\\print(myDict)
 A
-void
-fun
-def
-function
+{1: 'Value for key 1', 'two': 'Value for key two', '3': 'Value for key 3'}
+{1: 'Value for key 1', 'two': 'Value for key two', 3: 'Value for key 3'}
+{1: 'Value for key 1', 'two': 'Value for key two', 'Value for key 3': '3'}
+Error

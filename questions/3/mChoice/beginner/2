@@ -1,6 +1,6 @@
-�Cual es el prefijo para crear una funcion?
-A
-if condicion:
-if(condicion){}
-if:
-if[condicion]
+Cual es la opcion correcta para\\tuple = (1,2)\\tuple[1] = 5\\print(tuple)
+C
+(1,5)
+(5,5)
+Error
+[5]

@@ -1,6 +1,6 @@
-�C�mo se definen las variables?
-A
-nombre_variable: valor
-valor: nombre_variable
-nombre_variable= valor
-valor = nombre_variable
+Cual es el resultado de\\myList = [1,2,3]\\print(myList * 2)
+B
+[2,4,6]
+[1,2,3,1,2,3]
+[[1,2,3],[1,2,3]]
+Error

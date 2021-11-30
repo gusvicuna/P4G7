@@ -1,6 +1,6 @@
-Cual es el resultado de la operacion  'r' * 3
-A
+Si la variable 'a' es igual a 5 veces la variable 'b' y 'b' es igual a 5//Cual es el resultado de\\print([x*2 for x in range(a) if x < b ])
+B
+[1, 2, 3, 4, 5]
+[0, 2, 4, 6, 8]
 Error
-'rrr'
-Invalid Operation
-'r'
+[0, 4, 8 , 12, 16]
