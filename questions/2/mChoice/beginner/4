@@ -1,6 +1,6 @@
-Cual es el resultado de print(list(range(1,5)))
-A
-[1, 2, 3, 4]
-{1, 2, 3, 4,}
-{1, 2, 3, 4, 5}
-[1, 2, 3, 4, 5]
+Que data type se obtiene al hacer type(float(1))
+D
+<class 'str'>
+<class 'int'>
+<class 'bool'>
+<class 'float'>

@@ -81,28 +81,55 @@ def process_data(data):
 
         elif data["message"]["text"] == "/question":
             alternativa = True
+            used = True
 
-            if user[1] <= 25:
-                random_number = random.randint(0, len(mChoice_questions[user[0]-1][0]) - 1)
-                question = mChoice_questions[user[0]-1][0][random_number]
-            elif user[1] <= 60:
-                random_number = random.randint(0, len(mChoice_questions[user[0]-1][1]) - 1)
-                question = mChoice_questions[user[0]-1][1][random_number]
-            elif user[1] < 100:
-                random_number = random.randint(0, len(mChoice_questions[user[0]-1][2]) - 1)
-                question = mChoice_questions[user[0]-1][2][random_number]
-            elif user[2] == 1:
-                alternativa = False
-                random_number = random.randint(0, len(code_questions[user[0]-1][0]) - 1)
-                question = code_questions[user[0]-1][0][random_number]
-            elif user[2] == 2:
-                alternativa = False
-                random_number = random.randint(0, len(code_questions[user[0]-1][1]) - 1)
-                question = code_questions[user[0]-1][1][random_number]
-            else:
-                alternativa = False
-                random_number = random.randint(0, len(code_questions[user[0]-1][2]) - 1)
-                question = code_questions[user[0]-1][2][random_number]
+            if len(mChoice_questions[user[0]-1][0]) == len(user[6][0]):
+                user[6][0] = []
+            elif len(mChoice_questions[user[0]-1][1]) == len(user[6][1]):
+                user[6][1] = []
+            elif len(mChoice_questions[user[0]-1][2]) == len(user[6][2]):
+                user[6][2] = []
+            elif len(code_questions[user[0]-1][0]) == len(user[7][0]):
+                user[7][0] = []
+            elif len(code_questions[user[0]-1][1]) == len(user[7][1]):
+                user[7][1] = []
+            elif len(code_questions[user[0]-1][2]) == len(user[7][2]):
+                user[7][2] = []
+
+            while used:
+                if user[1] <= 25:
+                    random_number = random.randint(0, len(mChoice_questions[user[0]-1][0]) - 1)
+                    question = mChoice_questions[user[0]-1][0][random_number]
+                    if question.number not in user[6][0]:
+                        used = False
+                elif user[1] <= 60:
+                    random_number = random.randint(0, len(mChoice_questions[user[0]-1][1]) - 1)
+                    question = mChoice_questions[user[0]-1][1][random_number]
+                    if question.number not in user[6][1]:
+                        used = False
+                elif user[1] < 100:
+                    random_number = random.randint(0, len(mChoice_questions[user[0]-1][2]) - 1)
+                    question = mChoice_questions[user[0]-1][2][random_number]
+                    if question.number not in user[6][2]:
+                        used = False
+                elif user[2] == 1:
+                    alternativa = False
+                    random_number = random.randint(0, len(code_questions[user[0]-1][0]) - 1)
+                    question = code_questions[user[0]-1][0][random_number]
+                    if question.number not in user[7][0]:
+                        used = False
+                elif user[2] == 2:
+                    alternativa = False
+                    random_number = random.randint(0, len(code_questions[user[0]-1][1]) - 1)
+                    question = code_questions[user[0]-1][1][random_number]
+                    if question.number not in user[7][1]:
+                        used = False
+                else:
+                    alternativa = False
+                    random_number = random.randint(0, len(code_questions[user[0]-1][2]) - 1)
+                    question = code_questions[user[0]-1][2][random_number]
+                    if question.number not in user[7][2]:
+                        used = False
 
             user[3] = question.number
             user[4] = True
@@ -142,6 +169,7 @@ def process_data(data):
                 print(err)
                 x = 0
             if question.correct_answer == x: #ESTO HAY QUE CAMBIAR
+                user[7][int(question_number[1])].append(question.number)
                 user[2] += 1
                 if user[2] > 3:
                     user[0] += 1
@@ -171,6 +199,7 @@ def process_data(data):
             question_number = user[3]
             question = mChoice_questions[int(question_number[0])][int(question_number[1])][int(question_number[2])-1]
             if question.correct_answer == data["message"]["text"]:
+                user[6][int(question_number[1])].append(question.number)
                 user[1] += 10
                 if user[1] > 100:
                     user[1] = 100
@@ -202,8 +231,8 @@ def process_code_answer(answer):
 def check_chat_id(chat_id):
     global db
     if str(chat_id) not in db:
-        db[chat_id] = [1, 0, 1, "000", False, False] 
-                      #Nivel, Puntaje, Pregunta Desarollo, Codigo Pregunta, Esta respondiendo, Alternativa/Codigo
+        db[str(chat_id)] = [1, 0, 1, "000", False, False, [[], [] ,[]], [[], [], []]] 
+                      #Nivel, Puntaje, Pregunta Desarollo, Codigo Pregunta, Esta respondiendo, Alternativa/Codigo, preguntadas alternativa, codigo
     return db[str(chat_id)]
 
 def refactor_question(question):
