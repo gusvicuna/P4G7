@@ -16,24 +16,29 @@ class MChoiceQuestion:
     correct_answer = "A"
     options = []
     open_period = 20
+    hint = ""
 
-    def __init__(self, number, question, correct_answer, answers, open_period=20):
+    def __init__(self, number, question, correct_answer, answers, hint, open_period=20):
         self.question = question
         self.correct_answer = correct_answer
         self.options = answers
         self.open_period = open_period
         self.number = number
+        self.hint = hint
+
 
 
 class CodeQuestion:
     number = "000"
     question = ""
     correct_answer = ""
+    hint = ""
 
-    def __init__(self, number, question, correct_answer):
+    def __init__(self, number, question, correct_answer, hint):
         self.question = question
         self.correct_answer = correct_answer
         self.number = number
+        self.hint = hint
 
 current_directory = os.path.dirname(__file__)
 
@@ -156,13 +161,25 @@ def process_data(data):
 
             send_message(json_data)
 
+        elif data["message"]["text"] == "/hint" and user[4] is True:
+            question_number = user[3]
+            user[8] = True
+            if user[5] is True:
+                question = code_questions[int(question_number[0])][int(question_number[1])][int(question_number[2])-1]
+            else:
+                question = mChoice_questions[int(question_number[0])][int(question_number[1])][int(question_number[2])-1]
+            json_data = {
+                "chat_id": data['message']['chat']['id'],
+                "text": question.hint,
+                "parse_mode": "HTML"
+            }
+            send_message(json_data)
+        
         elif user[4] is True and user[5] is True:
             user[4] = False
             question_number = user[3]
             question = code_questions[int(question_number[0])][int(question_number[1])][int(question_number[2])-1]
             try:
-                total_answer = "x=0, "
-                print(data["message"]["text"])
                 x = process_code_answer(data["message"]["text"])
                 print(x)
             except ValueError as err:
@@ -171,26 +188,42 @@ def process_data(data):
             if question.correct_answer == x: #ESTO HAY QUE CAMBIAR
                 user[7][int(question_number[1])].append(question.number)
                 user[2] += 1
-                if user[2] > 3:
-                    user[0] += 1
-                    user[2] = 1
-                    user[1] = 0
                 json_data = {
                     "chat_id": data['message']['chat']['id'],
                     "text": "Correct!"
                 }
+                
+                if user[2] > 3:
+                    user[0] += 1
+                    user[2] = 1
+                    user[1] = 0
+                    send_message(json_data)
+                    json_data = {
+                        "chat_id": data['message']['chat']['id'],
+                        "text": "You passed to the next level!"
+                    }
             else:
                 if user[2] == 1:
-                    user[1] = 50
+                    if user[8] is True:
+                        user[1] = 40
+                    else:
+                        user[1] = 50
                 elif user[2] == 2:
-                    user[1] = 70
+                    if user[8] is True:
+                        user[1] = 60
+                    else:
+                        user[1] = 70
                 else:
-                    user[1] = 90
+                    if user[8] is True:
+                        user[1] = 80
+                    else:
+                        user[1] = 90
                 user[2] = 1
                 json_data = {
                     "chat_id": data['message']['chat']['id'],
                     "text": "Incorrect"
                 }
+            user[8] = False
             send_message(json_data)
             save_db()
         
@@ -200,7 +233,10 @@ def process_data(data):
             question = mChoice_questions[int(question_number[0])][int(question_number[1])][int(question_number[2])-1]
             if question.correct_answer == data["message"]["text"]:
                 user[6][int(question_number[1])].append(question.number)
-                user[1] += 10
+                if user[8] is True:
+                    user[1] += 8
+                else:
+                    user[1] += 10
                 if user[1] > 100:
                     user[1] = 100
                 json_data = {
@@ -215,6 +251,7 @@ def process_data(data):
                     "chat_id": data['message']['chat']['id'],
                     "text": "Incorrect"
                 }
+            user[8] = False
             send_message(json_data)
             json_data = {
                 "chat_id": data['message']['chat']['id'],
@@ -225,14 +262,14 @@ def process_data(data):
 
 def process_code_answer(answer):
     x = 0
-    exec(answer)
+    exec("global x; " + answer)
     return x
 
 def check_chat_id(chat_id):
     global db
     if str(chat_id) not in db:
-        db[str(chat_id)] = [1, 0, 1, "000", False, False, [[], [] ,[]], [[], [], []]] 
-                      #Nivel, Puntaje, Pregunta Desarollo, Codigo Pregunta, Esta respondiendo, Alternativa/Codigo, preguntadas alternativa, codigo
+        db[str(chat_id)] = [1, 0, 1, "000", False, False, [[], [] ,[]], [[], [], []], False] 
+                      #Nivel, Puntaje, Pregunta Desarollo, Codigo Pregunta, Esta respondiendo, Alternativa/Codigo, preguntadas alternativa, codigo, hint
     return db[str(chat_id)]
 
 def refactor_question(question):
@@ -261,34 +298,34 @@ def load_questions():
             mChoice_questions[i-1][0].append(
                 MChoiceQuestion("{1}0{0}".format(j, i-1), refactor_question(question_file.readline()[:-1]), question_file.readline()[:-1],
                                 [question_file.readline()[:-1], question_file.readline()[:-1],
-                                 question_file.readline()[:-1], question_file.readline()]))
+                                 question_file.readline()[:-1], question_file.readline()[:-1]], question_file.readline()))
             question_file.close()
             question_file = open(os.path.join(current_directory, "questions", str(i), "mChoice", "intermediate", str(j)), "r")
             mChoice_questions[i-1][1].append(
                 MChoiceQuestion("{1}1{0}".format(j, i-1), refactor_question(question_file.readline()[:-1]), question_file.readline()[:-1],
                                 [question_file.readline()[:-1], question_file.readline()[:-1],
-                                 question_file.readline()[:-1], question_file.readline()]))
+                                 question_file.readline()[:-1], question_file.readline()[:-1]], question_file.readline()))
             question_file.close()
             question_file = open(os.path.join(current_directory, "questions", str(i), "mChoice", "advanced", str(j)), "r")
             mChoice_questions[i-1][2].append(
                 MChoiceQuestion("{1}2{0}".format(j, i-1), refactor_question(question_file.readline()[:-1]), question_file.readline()[:-1],
                                 [question_file.readline()[:-1], question_file.readline()[:-1],
-                                 question_file.readline()[:-1], question_file.readline()]))
+                                 question_file.readline()[:-1], question_file.readline()[:-1]], question_file.readline()))
             question_file.close()
 
     for i in range(1, 6):
         for j in range(1, 4):
             question_file = open(os.path.join(current_directory, "questions", str(i), "code", "beginner", str(j)), "r")
             code_questions[i-1][0].append(
-                CodeQuestion("{1}0{0}".format(j, i-1), refactor_question(question_file.readline()[:-1]), question_file.readline()))
+                CodeQuestion("{1}0{0}".format(j, i-1), refactor_question(question_file.readline()[:-1]), question_file.readline()[:-1], question_file.readline()))
             question_file.close()
             question_file = open(os.path.join(current_directory, "questions", str(i), "code", "intermediate", str(j)), "r")
             code_questions[i-1][1].append(
-                CodeQuestion("{1}1{0}".format(j, i-1), refactor_question(question_file.readline()[:-1]), question_file.readline()))
+                CodeQuestion("{1}1{0}".format(j, i-1), refactor_question(question_file.readline()[:-1]), question_file.readline()[:-1], question_file.readline()))
             question_file.close()
             question_file = open(os.path.join(current_directory, "questions", str(i), "code", "advanced", str(j)), "r")
             code_questions[i-1][2].append(
-                CodeQuestion("{1}2{0}".format(j, i-1), refactor_question(question_file.readline()[:-1]), question_file.readline()))
+                CodeQuestion("{1}2{0}".format(j, i-1), refactor_question(question_file.readline()[:-1]), question_file.readline()[:-1], question_file.readline()))
             question_file.close()
 
 
