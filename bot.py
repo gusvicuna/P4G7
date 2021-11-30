@@ -205,12 +205,16 @@ def process_data(data):
                 
                 if user[2] > 3:
                     user[0] += 1
+                    text = 'You passed to the next level!'
+                    if user[0] == 6:
+                        user[0] = 1
+                        text = 'You finished learning with this bot! You can start again whenever you want!'
                     user[2] = 1
                     user[1] = 0
                     send_message(json_data)
                     json_data = {
                         "chat_id": data['message']['chat']['id'],
-                        "text": "You passed to the next level!"
+                        "text": text
                     }
             else:
                 if user[2] == 1:
