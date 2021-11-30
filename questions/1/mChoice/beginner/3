@@ -1,4 +1,4 @@
-¿Cuántas variables hay en el siguiente código?\n x = 1\n y = 2\n x = y
+¿Cuántas variables hay en el siguiente código?\\ x = 1\\ y = 2\\ x = y
 C
 <code>0</code>
 <code>1</code>

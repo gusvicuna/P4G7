@@ -1,4 +1,4 @@
-¿De que tipo es la variable x luego de ejecutar el siguiente codigo?\n x = 4\n x = "mi numero favorito es el " + x\n
+¿De que tipo es la variable x luego de ejecutar el siguiente codigo?\\ x = 4\\ x = "mi numero favorito es el " + x
 B
 <code>/* commentario */</code>
 <code>"""comentario"""</code>

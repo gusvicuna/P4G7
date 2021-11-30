@@ -1,4 +1,4 @@
-a = 4\n'''A = 'John' '''\nA = 'Doe'\nA = str(a) + A\nprint(a)
+¿Que se imprime en la consola al ejecutar el siguiente codigo?\\<code>a = 4\\'''\\A = 'John'\\'''\\A = 'Doe'\\A = str(a) + A\\print(a)</code>
 D
 John Doe
 4Doe

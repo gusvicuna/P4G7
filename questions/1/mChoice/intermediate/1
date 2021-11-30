@@ -1,4 +1,4 @@
-¿Que se imprime en la consola al ejecutar el siguiente codigo?\n x = y\n y = "Hola mundo"\n print(x)
+¿Que se imprime en la consola al ejecutar el siguiente codigo?\\ x = y\\ y = "Hola mundo"\\ print(x)
 D
 x = "Hola mundo"
 "Hola mundo"

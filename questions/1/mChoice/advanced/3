@@ -1,4 +1,4 @@
-a = 1\n#Cambiemos el valor a por 5\nA = 5\n'''Creamos una variable nueva b'''\nb = a\n#Veamos el resultado de A + b\nprint(a + b)
+¿Que se imprime en la consola al ejecutar el siguiente codigo?\\a = 1\\#Cambiemos el valor a por 5\\A = 5\\'''Creamos una variable nueva b'''\\b = a\\#Veamos el resultado de A + b\\print(a + b)
 D
 1
 6

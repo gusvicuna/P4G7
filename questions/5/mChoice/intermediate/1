@@ -1,4 +1,4 @@
-def suma(x,y):\n    return x + y\n\na = 0\nb = 5\nwhile b > 0:\n    a = suma(a,b)\n    b -= 1\nprint(suma(a,b))
+¿Que se imprime en la consola al ejecutar el siguiente codigo?\\def suma(x,y):\\    return x + y\\ \\a = 0\\b = 5\\while b > 0:\\    a = suma(a,b)\\    b -= 1\\print(suma(a,b))
 B
 5
 15

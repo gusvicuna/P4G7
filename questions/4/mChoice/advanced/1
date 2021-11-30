@@ -1,4 +1,4 @@
-a = [[1,2,3],[4,5,6],[7,8,9]]\nb = a[:1:-1]\nfor x in b:\n    for y in range(len(x)):\n        if y%2:\n            x[y] = 0\nprint(b)
+¿Que se imprime en la consola al ejecutar el siguiente codigo?\\a = [[1,2,3],[4,5,6],[7,8,9]]\\b = a[:1:-1]\\for x in b:\\    for y in range(len(x)):\\        if y%2:\\            x[y] = 0\\print(b)
 A
 [[7,0,9]]
 [[7,0,9],[4,0,6],[1,0,3]]

@@ -134,7 +134,7 @@ def process_data(data):
             question_number = user[3]
             question = code_questions[int(question_number[0])][int(question_number[1])][int(question_number[2])-1]
             try:
-                x = -1
+                total_answer = "x=0, "
                 print(data["message"]["text"])
                 x = process_code_answer(data["message"]["text"])
                 print(x)
@@ -206,37 +206,43 @@ def check_chat_id(chat_id):
                       #Nivel, Puntaje, Pregunta Desarollo, Codigo Pregunta, Esta respondiendo, Alternativa/Codigo
     return db[str(chat_id)]
 
+def refactor_question(question):
+    lineas = question.split('\\')
+    question_final = ""
+    for linea in lineas:
+        question_final+=linea
+        question_final+="\n"
+    print(question_final)
+    return question_final
 
 def save_db():
     global db
     with open(os.path.join(current_directory, "database.txt"), "w") as jsonfile:
         json.dump(db, jsonfile)
 
-
 def load_db():
     global db
     with open(os.path.join(current_directory, "database.txt"), "r") as file:
         db = json.load(file)
-
 
 def load_questions():
     for i in range(1, 6):
         for j in range(1, 6):
             question_file = open(os.path.join(current_directory, "questions", str(i), "mChoice", "beginner", str(j)), "r")
             mChoice_questions[i-1][0].append(
-                MChoiceQuestion("{1}0{0}".format(j, i-1), question_file.readline()[:-1], question_file.readline()[:-1],
+                MChoiceQuestion("{1}0{0}".format(j, i-1), refactor_question(question_file.readline()[:-1]), question_file.readline()[:-1],
                                 [question_file.readline()[:-1], question_file.readline()[:-1],
                                  question_file.readline()[:-1], question_file.readline()]))
             question_file.close()
             question_file = open(os.path.join(current_directory, "questions", str(i), "mChoice", "intermediate", str(j)), "r")
             mChoice_questions[i-1][1].append(
-                MChoiceQuestion("{1}1{0}".format(j, i-1), question_file.readline()[:-1], question_file.readline()[:-1],
+                MChoiceQuestion("{1}1{0}".format(j, i-1), refactor_question(question_file.readline()[:-1]), question_file.readline()[:-1],
                                 [question_file.readline()[:-1], question_file.readline()[:-1],
                                  question_file.readline()[:-1], question_file.readline()]))
             question_file.close()
             question_file = open(os.path.join(current_directory, "questions", str(i), "mChoice", "advanced", str(j)), "r")
             mChoice_questions[i-1][2].append(
-                MChoiceQuestion("{1}2{0}".format(j, i-1), question_file.readline()[:-1], question_file.readline()[:-1],
+                MChoiceQuestion("{1}2{0}".format(j, i-1), refactor_question(question_file.readline()[:-1]), question_file.readline()[:-1],
                                 [question_file.readline()[:-1], question_file.readline()[:-1],
                                  question_file.readline()[:-1], question_file.readline()]))
             question_file.close()
@@ -245,15 +251,15 @@ def load_questions():
         for j in range(1, 4):
             question_file = open(os.path.join(current_directory, "questions", str(i), "code", "beginner", str(j)), "r")
             code_questions[i-1][0].append(
-                CodeQuestion("{1}0{0}".format(j, i-1), question_file.readline()[:-1], question_file.readline()))
+                CodeQuestion("{1}0{0}".format(j, i-1), refactor_question(question_file.readline()[:-1]), question_file.readline()))
             question_file.close()
             question_file = open(os.path.join(current_directory, "questions", str(i), "code", "intermediate", str(j)), "r")
             code_questions[i-1][1].append(
-                CodeQuestion("{1}1{0}".format(j, i-1), question_file.readline()[:-1], question_file.readline()))
+                CodeQuestion("{1}1{0}".format(j, i-1), refactor_question(question_file.readline()[:-1]), question_file.readline()))
             question_file.close()
             question_file = open(os.path.join(current_directory, "questions", str(i), "code", "advanced", str(j)), "r")
             code_questions[i-1][2].append(
-                CodeQuestion("{1}2{0}".format(j, i-1), question_file.readline()[:-1], question_file.readline()))
+                CodeQuestion("{1}2{0}".format(j, i-1), refactor_question(question_file.readline()[:-1]), question_file.readline()))
             question_file.close()
 
 
