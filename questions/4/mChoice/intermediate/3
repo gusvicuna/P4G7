@@ -1,6 +1,6 @@
-¿Que imprime la consola al ejecutar el siguiente codigo?\nx = "my string"\nfor a in x:\n    x = x + ' ' + a\nfor b in x:\n    x[b] = "a"\nprint (x)
+Can we expect the same result from \\a)\\a = [x for x in range(10) if x%2 ==0]\\print(a)\\b)\\a = 0\\b = []\\while a < 10:\\    if a%2 == 0:\\        b.append(a)\\    a +=1
 A
-'str' object does not support item assignment
-my string m y   s t r i n g
-'str' object is not callable
-'str' object is not iterable
+Yes
+No
+The while loop is infinite
+[x for x in range(10) if x%2 ==0] is not possible to compute
