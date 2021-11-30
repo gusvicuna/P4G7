@@ -1,0 +1,6 @@
+a = 0\nwhile True:\n    if a > 3:\n        break\n    a += 1\nprint(a)
+B
+Infinite loop
+4
+3
+Error

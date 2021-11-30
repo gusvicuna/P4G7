@@ -1,6 +1,6 @@
-¿Cuál es el valor de la variable x luego del siguiente código?\n x = 1\n #x = 3\n x = -1
-B
-<code>1</code>
-<code>-1</code>
-<code>3</code>
-<code>-3</code>
+¿Cuál es el prefijo para comentar en python?
+D
+<code>/*</code>
+<code>comment()</code>
+<code>//</code>
+<code>#</code>

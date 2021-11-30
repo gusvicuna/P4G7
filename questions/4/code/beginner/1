@@ -1,0 +1,6 @@
+a = 1\nb = 5\nif a > b:\n    a = 2\n    b = 9\n    a = a + 1\n    print(b * a * a)\nelse:\n    b = 3\n    print(a + b)
+A
+4
+729
+6
+Error

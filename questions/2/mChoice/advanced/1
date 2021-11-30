@@ -1,6 +1,6 @@
-�C�mo se definen las variables?
-A
-nombre_variable: valor
-valor: nombre_variable
-nombre_variable= valor
-valor = nombre_variable
+a = "Hello World!"\nprint(a[::-1])
+C
+Error
+!dlroW
+!dlroW olleH
+Hello World!

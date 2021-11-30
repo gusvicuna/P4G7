@@ -1,6 +1,0 @@
-¿Dentro de qué debe ir un comentario para comentar en multiples lineas?
-B
-<code>/* commentario */</code>
-<code>"""comentario"""</code>
-<code>#comentario#</code>
-<code>"comentario"</code>

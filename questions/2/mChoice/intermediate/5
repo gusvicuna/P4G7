@@ -1,6 +1,6 @@
-Cual es el resultado de la operacion  'r' * 3
-A
-Error
-'rrr'
-Invalid Operation
-'r'
+¿De que tipo es la variable x luego de ejecutar el siguiente codigo?\n x = 4\n x = "mi numero favorito es el " + x\n
+B
+<code>/* commentario */</code>
+<code>"""comentario"""</code>
+<code>#comentario#</code>
+<code>"comentario"</code>

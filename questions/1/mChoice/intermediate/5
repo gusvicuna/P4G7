@@ -1,6 +1,6 @@
-Cual es el resultado de la operacion  'r' * 3
-A
-Error
-'rrr'
-Invalid Operation
-'r'
+¿Dentro de qué debe ir un comentario para comentar en multiples lineas?
+B
+<code>/* commentario */</code>
+<code>"""comentario"""</code>
+<code>#comentario#</code>
+<code>"comentario"</code>

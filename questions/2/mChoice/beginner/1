@@ -1,6 +1,6 @@
-�C�mo se definen las variables?
+print(type("2.0"))
 A
-nombre_variable: valor
-valor: nombre_variable
-nombre_variable= valor
-valor = nombre_variable
+<class 'str'>
+<class 'int'>
+<class 'bool'>
+<class 'float'>
