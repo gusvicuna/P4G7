@@ -1,6 +1,4 @@
-a = 0\nwhile True:\n    if a > 3:\n        break\n    a += 1\nprint(a)
-B
-Infinite loop
-4
-3
-Error
+Define una variable <code>variable</code> que tenga el valor <code>5</code>
+a
+Hint
+x = 0
