@@ -1,6 +1,6 @@
-�Cual es el prefijo para crear una funcion?
+firstDict = {"brand": "Ford", "model": "Mustang", "year": 2020}\\secondDict = dict(firstDict)\\secondDict["year"] = 1990\\print(firstDict)
 A
-if condicion:
-if(condicion){}
-if:
-if[condicion]
+{'brand': 'Ford', 'model': 'Mustang', 'year': 2020}
+{'brand': 'Ford', 'model': 'Mustang', 'year': 1990}
+TypeError
+name 'dict' is not defined
