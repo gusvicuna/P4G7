@@ -1,6 +1,6 @@
-¿Que imprime la consola al ejecutar el siguiente codigo?\nx = "my string"\nfor a in x:\n    x = x + ' ' + a\nfor b in x:\n    x[b] = "a"\nprint (x)
-A
-'str' object does not support item assignment
-my string m y   s t r i n g
-'str' object is not callable
-'str' object is not iterable
+Replace the commented line with an option that allows us to get the string 'else' from the variable c\\a = [1,2,3]\\b = 0\\c = "Welcome to if,else and loops"\\for x in a:\\    #Replace in here\\print(c[b:b+4])
+B
+b = x * x
+b += x * x
+b = x + x
+b += x % x
