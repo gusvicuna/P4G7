@@ -180,8 +180,6 @@ def process_data(data):
             question_number = user[3]
             question = code_questions[int(question_number[0])][int(question_number[1])][int(question_number[2])-1]
             try:
-                total_answer = "x=0, "
-                print(data["message"]["text"])
                 x = process_code_answer(data["message"]["text"])
                 print(x)
             except ValueError as err:
@@ -190,14 +188,20 @@ def process_data(data):
             if question.correct_answer == x: #ESTO HAY QUE CAMBIAR
                 user[7][int(question_number[1])].append(question.number)
                 user[2] += 1
-                if user[2] > 3:
-                    user[0] += 1
-                    user[2] = 1
-                    user[1] = 0
                 json_data = {
                     "chat_id": data['message']['chat']['id'],
                     "text": "Correct!"
                 }
+                
+                if user[2] > 3:
+                    user[0] += 1
+                    user[2] = 1
+                    user[1] = 0
+                    send_message(json_data)
+                    json_data = {
+                        "chat_id": data['message']['chat']['id'],
+                        "text": "You passed to the next level!"
+                    }
             else:
                 if user[2] == 1:
                     if user[8] is True:
@@ -258,7 +262,7 @@ def process_data(data):
 
 def process_code_answer(answer):
     x = 0
-    exec(answer)
+    exec("global x; " + answer)
     return x
 
 def check_chat_id(chat_id):

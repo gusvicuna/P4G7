@@ -1,6 +1,6 @@
-�Cual es el prefijo para crear una funcion?
-A
-if condicion:
-if(condicion){}
-if:
-if[condicion]
+a = 9\\b = 3\\while b > 0:\\    if a % 3:\\        b -= 1\\    else:\\        a -= 1\\print(a)
+C
+9
+1
+8
+6

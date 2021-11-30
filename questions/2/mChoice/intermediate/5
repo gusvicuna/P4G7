@@ -1,6 +1,6 @@
-¿De que tipo es la variable x luego de ejecutar el siguiente codigo?\\ x = 4\\ x = "mi numero favorito es el " + x
-B
-<code>/* commentario */</code>
-<code>"""comentario"""</code>
-<code>#comentario#</code>
-<code>"comentario"</code>
+Cual es el resultado del siguiente codigo?\\ a = True\\ b = False\\ c = not (a and b) or not a\\ d = 3\\ print( not(d < 3) and c )
+D
+3
+Error
+False
+True

@@ -1,6 +1,6 @@
-�Cual es el prefijo para crear una funcion?
-A
-void
-fun
-def
-function
+a = ["Hola","Chao","Bienvenido","Prendido","Apagado"]\\b = 'On'\\c = []\\if "apagado" in a:\\    b = 'Off'\\    print(b)\\else:\\    c.append(a[:2:-1])\\    print(c)
+C
+Off
+['Apagado', 'Prendido']
+[['Apagado','Prendido']]
+['Apagado']

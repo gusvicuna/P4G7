@@ -1,6 +1,6 @@
-�Cual es el prefijo para crear una funcion?
-A
-void
-fun
-def
-function
+Cual es el resultado del siguiente codigo?\\ a = 2.2\\ b = a\\ b = b * 5\\ print((b % 10 * a) is a)
+B
+2.42
+2.2
+True
+False
