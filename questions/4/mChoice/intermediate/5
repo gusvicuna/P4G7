@@ -1,4 +1,4 @@
-a = 1\nb = 5\nif a > b:\n    a = 2\n    b = 9\n    a = a + 1\n    print(b * a * a)\nelse:\n    b = 3\n    print(a + b)
+a = 1\\b = 5\\if a > b:\\    a = 2\\    b = 9\\    a = a + 1\\    print(b * a * a)\nelse:\\    b = 3\\    print(a + b)
 A
 4
 729
