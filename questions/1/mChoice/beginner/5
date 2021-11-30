@@ -1,7 +1,7 @@
-¿Cuál es el prefijo para comentar en python?
+What's the prefix to make a comment?
 D
 <code>/*</code>
 <code>comment()</code>
 <code>//</code>
 <code>#</code>
-Hint
+It's different from C, C++ and C#

@@ -1,7 +1,7 @@
-¿Cuál es el valor de la variable x luego del siguiente código?\\ x = 1\\ #x = 3\\ x = -1
+What's the value of variable <code>x</code> after the next code?\\ <code>x = 1</code>\\ <code>#x = 3<code/>\\ <code>x = -1</code>
 B
 <code>1</code>
 <code>-1</code>
 <code>3</code>
 <code>-3</code>
-Hint
+Comments are ignored by the compiler

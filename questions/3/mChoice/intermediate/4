@@ -5,3 +5,4 @@ B
 <code>{1, 2, 3, 4, 5}</code>
 <code>[1, 2, 3, 4, 5]</code>
 <code>range(a, b)</code> only returns values until <code>b - 1</code>
+Hint

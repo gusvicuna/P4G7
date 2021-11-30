@@ -1,7 +1,7 @@
-¿Que se imprime en la consola al ejecutar el siguiente codigo?\\ x = y\\ y = "Hola mundo"\\ print(x)
+whhat's printed on console after executing the next code?\\ <code>x = y</code>\\ <code>y = "Hello world"</code>\\ <code>print(x)</code>
 D
-x = "Hola mundo"
-"Hola mundo"
-Hola mundo
-Error
-Hint
+<code>x = "Hello world"</code>
+<code>"Hello world"</code>
+<code>Hello world</code>
+<code>Error</code>
+<code>print(value)</code> always prints strings

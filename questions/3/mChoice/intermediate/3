@@ -5,3 +5,4 @@ D
 <code>tuple{key}</code>
 <code>tuple[index]</code>
 Tuples only store values in a fixed order
+Hint

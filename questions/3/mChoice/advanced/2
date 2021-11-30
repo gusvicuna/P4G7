@@ -4,3 +4,4 @@ A
 {'brand': 'Ford', 'model': 'Mustang', 'year': 1990}
 TypeError
 name 'dict' is not defined
+Hint

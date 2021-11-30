@@ -1,6 +1,7 @@
-¿Que se imprime en la consola al ejecutar el siguiente codigo?\\a = "Hello World!"\\print(a[::-1])
+What's on console after executing the next code?\\<code>a = "Hello World!"<code/>\\<code>print(a[::-1])</code>
 C
-Error
-!dlroW
-!dlroW olleH
-Hello World!
+<code>Error</code>
+<code>!dlroW</code>
+<code>!dlroW olleH</code>
+<code>Hello World!</code>
+[::-1] operates in the whole value

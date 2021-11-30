@@ -1,7 +1,7 @@
-¿Que se imprime en la consola al ejecutar el siguiente codigo?\\a = 1\\#Cambiemos el valor a por 5\\A = 5\\'''Creamos una variable nueva b'''\\b = a\\#Veamos el resultado de A + b\\print(a + b)
+What's on console after printing the next code?\\<code>a = 1\</code>\<code>#Let's change the value for 5</code>\\<code>A = 5</code>\\<code>'''We create a new variable b'''</code>\\<code>b = a</code>\\<code>#Let's see the result of A + b</code>\\<code>print(a + b)</code>
 D
-1
-6
-7
-2
-Hint
+<code>1</code>
+<code>6</code>
+<code>7</code>
+<code>2</code>
+Sometimes a programmers comments aren't optimal

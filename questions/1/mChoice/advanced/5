@@ -1,7 +1,7 @@
-Cual es el resultado de la operacion  'r' * 3
-A
-Error
-'rrr'
-Invalid Operation
-'r'
-Hint
+What's the result of the operation  <code>'r' * 3</code>
+B
+<code>Error</code>
+<code>'rrr'</code>
+<code>Invalid Operation</code>
+<code>'r'</code>
+Python is very flexible and intuitive

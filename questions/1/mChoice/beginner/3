@@ -1,7 +1,7 @@
-¿Cuántas variables hay en el siguiente código?\\ x = 1\\ y = 2\\ x = y
+How many variables are in the next code?\\ <code>x = 1</code>\\ <code>y = 2</code>\\ <code>x = y</code>
 C
-<code>0</code>
-<code>1</code>
-<code>2</code>
-<code>4</code>
-Hint
+0
+1
+2
+4
+You can assign the value of a variable to another one

@@ -1,6 +1,7 @@
 Que data type se obtiene al hacer type(float(1))
 D
-<class 'str'>
-<class 'int'>
-<class 'bool'>
-<class 'float'>
+&lt;class 'str'>
+&lt;class 'int'>
+&lt;class 'bool'>
+&lt;class 'float'>
+Hint

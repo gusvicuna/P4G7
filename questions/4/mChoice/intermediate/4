@@ -4,3 +4,4 @@ b = x * x
 b += x * x
 b = x + x
 b += x % x
+Hint

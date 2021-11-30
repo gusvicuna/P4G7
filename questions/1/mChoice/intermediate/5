@@ -1,7 +1,7 @@
-¿Dentro de qué debe ir un comentario para comentar en multiples lineas?
+Inside what must you enclose a multiline comment?
 B
-<code>/* commentario */</code>
-<code>"""comentario"""</code>
-<code>#comentario#</code>
-<code>"comentario"</code>
-Hint
+<code>/* comment */</code>
+<code>"""comment"""</code>
+<code>#comment#</code>
+Python doesn't support multiline comments in this way
+'#' is the symbol you use to comment in Python

@@ -1,7 +1,7 @@
-Cual de las siguientes opciones es en formato Camel Case?
+Which one of thhe next options is in thhe format Camel Case?
 A
-miNuevaVariable
-mi_Nueva_Variable
-MiNuevaVariable
-MinuevaVariabl
-Hint
+<code>myNewVariable</code>
+<code>my_New_Variable</code>
+<code>MyNewVariable</code>
+<code>MynewVariable</code>
+We have snake case, camel case and pascal case. Think of the form of those.

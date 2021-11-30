@@ -1,7 +1,7 @@
-¿Qué sucede si se agrega un comentario al final de una linea de código?
+What happens if you add a comment at the end of a line?
 A
-<code>Nada, el comentario es agregado correctamente</code>
-<code>El código no correrá</code>
-<code>La linea de código se transformará en un comentario</code>
-<code>El comentario se tomará como código</code>
-Hint
+Nothing, the comment is added normally
+The code isn't going to run
+The line of code transforms in a comment
+The comment becomes part of the code
+Comments are ignored by the compiler

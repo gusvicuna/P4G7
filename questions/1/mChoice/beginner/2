@@ -1,7 +1,7 @@
-¿Cuál es el valor de la variable x luego de ejecutar el siguiente código?\\ x = 0\\ x = 1
+With what value ends the variable <code>x</code> after executing this code?\\ <code>x = 0</code>\\ <code>x = 1</code>
 A
 <code>1</code>
 <code>0</code>
 <code>x</code>
 <code>null</code>
-Hint
+You can reassign a variables value at any time

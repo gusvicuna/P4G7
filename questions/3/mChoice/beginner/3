@@ -4,3 +4,4 @@ A
 {1: 'Value for key 1', 'two': 'Value for key two', 3: 'Value for key 3'}
 {1: 'Value for key 1', 'two': 'Value for key two', 'Value for key 3': '3'}
 Error
+Hint

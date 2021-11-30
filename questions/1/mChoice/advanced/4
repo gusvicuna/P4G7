@@ -1,7 +1,7 @@
-Cual es el resultado de print(list(range(1,5)))
+What's the value of //<code>string = "I'm a "</code>\\<code>         "string"</code>
 A
-[1, 2, 3, 4]
-{1, 2, 3, 4,}
-{1, 2, 3, 4, 5}
-[1, 2, 3, 4, 5]
-Hint
+<code>I'm a string</code>
+<code>I'm a</code>
+<code>Syntax Error</code>
+<code>I'm a \nstring</code>
+There are many ways to concatenate strings
