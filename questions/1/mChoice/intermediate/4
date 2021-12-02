@@ -1,7 +1,7 @@
-What's the value of variable <code>x</code> after the next code?\\ <code>x = 1</code>\\ <code>#x = 3<code/>\\ <code>x = -1</code>
+What's the value of variable x after the next code?\\ x = 1\\ #x = 3<code/>\\ x = -1
 B
-<code>1</code>
-<code>-1</code>
-<code>3</code>
-<code>-3</code>
+1
+-1
+3
+-3
 Comments are ignored by the compiler

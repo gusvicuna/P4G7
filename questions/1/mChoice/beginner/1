@@ -1,7 +1,7 @@
 How do you define a variable?
 C
-<code>variable_name: value</code>
-<code>value: variable_name</code>
-<code>variable_name = value</code>
-<code>value = variable_name</code>
+variable_name: value
+value: variable_name
+variable_name = value
+value = variable_name
 '=' is the symbol to define variables

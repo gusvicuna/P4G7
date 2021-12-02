@@ -53,6 +53,11 @@ d = 0
 y = 0
 z = 0
 
+def mi_funcion(a):
+    return a*a
+def mi_funcion2(a,b):
+    return a*b
+
 mChoice_questions = [[[], [], []], [[], [], []], [[], [], []],[[], [], []],[[], [], []]]
 code_questions = [[[], [], []], [[], [], []], [[], [], []],[[], [], []],[[], [], []]]
 
@@ -80,7 +85,7 @@ def process_data(data):
             send_message(json_data)
         
         elif data["message"]["text"] == "/help":
-            help_text = "In this bot you'll try to get complete all the levels gaining points for each on of them while you answer questions about coding on python.\n\nThere are currently 5 levels with different subjects:\n  Level 1 : Comments and Variables\n  Level 2 : Data types and Operators\n  Level 3 : Lists, Tuples, Sets and Dictionaries\n  Level 4 : if and loops\n  Level 5 : functions\nEach time you get to 25 and 50 points on each level the difficulty will increase! And when you get to 100 points you will be tested with 3 questions where you have to write code. If you answer them all correctly you pass to the next level! if you don't, then you will lose points and try again later.\n\nCommands:\n  /question: get a new question\n  /stats: see your current stats\n  /help: I will send you this message again\n\nGood luck!"
+            help_text = "In this bot you'll try to get complete all the levels gaining points for each on of them while you answer questions about coding on python.\n\nThere are currently 5 levels with different subjects:\n  Level 1 : Comments and Variables\n  Level 2 : Data types and Operators\n  Level 3 : Lists, Tuples, Sets and Dictionaries\n  Level 4 : if and loops\n  Level 5 : functions\nEach time you get to 25 and 50 points on each level the difficulty will increase! And when you get to 100 points you will be tested with 3 questions where you have to write code. If you answer them all correctly you pass to the next level! if you don't, then you will lose points and try again later. For questions writing code use ; for an endline\n\nCommands:\n  /question: get a new question\n  /stats: see your current stats\n  /help: I will send you this message again\n\nGood luck!"
             json_data = {
                 "chat_id": data['message']['chat']['id'],
                 "text": help_text
@@ -145,6 +150,8 @@ def process_data(data):
                     question = code_questions[user[0]-1][2][random_number]
                     if question.number not in user[7][2]:
                         used = False
+            
+            print(question.number)
 
             user[3] = question.number
             user[4] = True
@@ -156,7 +163,6 @@ def process_data(data):
                     "text": "{0}: {1}\nA) {2}\nB) {3}\nC) {4}\nD) {5}".format(question.number, question.question,
                                                                             question.options[0], question.options[1],
                                                                             question.options[2], question.options[3]),
-                    "parse_mode": "HTML",
                     "reply_markup": {"keyboard": [[{"text": "A"}], [{"text": "B"}], [{"text": "C"}], [{"text": "D"}]],
                                     "one_time_keyboard": True, 
                                     "resize_keyboard": True}

@@ -1,4 +1,4 @@
-Define una variable <code>variable</code> que tenga el valor <code>5</code>
-a
-Hint
-x = 0
+Guarda en la variable x el resultado de ejecutar la funcion mi_funcion pasando como parametro la variable a
+4
+Puedes usar funcion(parametro)
+global a; global mi_funcion; a = 2;

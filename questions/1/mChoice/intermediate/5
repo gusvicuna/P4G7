@@ -1,7 +1,7 @@
 Inside what must you enclose a multiline comment?
 B
-<code>/* comment */</code>
-<code>"""comment"""</code>
-<code>#comment#</code>
+/* comment */
+"""comment"""
+#comment#
 Python doesn't support multiline comments in this way
 '#' is the symbol you use to comment in Python

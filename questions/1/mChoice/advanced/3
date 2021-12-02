@@ -1,7 +1,7 @@
-What's on console after printing the next code?\\<code>a = 1\</code>\<code>#Let's change the value for 5</code>\\<code>A = 5</code>\\<code>'''We create a new variable b'''</code>\\<code>b = a</code>\\<code>#Let's see the result of A + b</code>\\<code>print(a + b)</code>
+What's on console after printing the next code?\\a = 1\\#Let's change the value for 5\\A = 5\\'''We create a new variable b'''\\b = a\\#Let's see the result of A + b\\print(a + b)
 D
-<code>1</code>
-<code>6</code>
-<code>7</code>
-<code>2</code>
+1
+6
+7
+2
 Sometimes a programmers comments aren't optimal

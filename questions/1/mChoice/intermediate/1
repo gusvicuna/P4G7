@@ -1,7 +1,7 @@
-whhat's printed on console after executing the next code?\\ <code>x = y</code>\\ <code>y = "Hello world"</code>\\ <code>print(x)</code>
+whhat's printed on console after executing the next code?\\ x = y\\ y = "Hello world"\\ print(x)
 D
-<code>x = "Hello world"</code>
-<code>"Hello world"</code>
-<code>Hello world</code>
-<code>Error</code>
-<code>print(value)</code> always prints strings
+x = "Hello world"
+"Hello world"
+Hello world
+Error
+print(value) always prints strings

@@ -1,7 +1,7 @@
 Which one of thhe next options is in thhe format Camel Case?
 A
-<code>myNewVariable</code>
-<code>my_New_Variable</code>
-<code>MyNewVariable</code>
-<code>MynewVariable</code>
+myNewVariable
+my_New_Variable
+MyNewVariable
+MynewVariable
 We have snake case, camel case and pascal case. Think of the form of those.

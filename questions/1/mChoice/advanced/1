@@ -1,8 +1,8 @@
-What's on the console after printing the next code?\\<code>a = 4\\'''\\A = 'John'\\'''\\A = 'Doe'\\A = str(a) + A\\print(a)</code>
+What's on the console after printing the next code?\\a = 4\\'''\\A = 'John'\\'''\\A = 'Doe'\\A = str(a) + A\\print(a)
 D
-<code>John Doe</code>
-<code>4Doe</code>
-<code>Doe4</code>
-<code>4</code>
-<code>Hint</code>
+John Doe
+4Doe
+Doe4
+4
+Hint
 The '+' operation concatenates strings

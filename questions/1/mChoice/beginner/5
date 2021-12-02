@@ -1,7 +1,7 @@
 What's the prefix to make a comment?
 D
-<code>/*</code>
-<code>comment()</code>
-<code>//</code>
-<code>#</code>
+/*
+comment()
+//
+#
 It's different from C, C++ and C#

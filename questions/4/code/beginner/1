@@ -1,4 +1,4 @@
-Define una variable <code>variable</code> que tenga el valor <code>5</code>
-a
-Hint
-x = 0
+Itera sobre la lista a, sumale 1 a cada uno de sus valores y guarda el resultado en la variable x.
+[2, 3, 4, 5]
+Puedes usar [ x for x in y]
+global a; a = [1,2,3,4]

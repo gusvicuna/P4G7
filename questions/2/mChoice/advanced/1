@@ -1,7 +1,7 @@
-What's on console after executing the next code?\\<code>a = "Hello World!"<code/>\\<code>print(a[::-1])</code>
+What's on console after executing the next code?\\a = "Hello World!"<code/>\\print(a[::-1])
 C
-<code>Error</code>
-<code>!dlroW</code>
-<code>!dlroW olleH</code>
-<code>Hello World!</code>
+Error
+!dlroW
+!dlroW olleH
+Hello World!
 [::-1] operates in the whole value
